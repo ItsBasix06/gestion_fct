@@ -1,0 +1,20 @@
+# --- Entorno Virtual ---
+# No se sube porque cada ordenador tiene el suyo propio
+venv_basi/
+venv/
+env/
+
+# --- Base de Datos ---
+# Evita que subas tu base de datos corrupta o borres la de tu amigo
+db.sqlite3
+
+# --- Archivos temporales de Python ---
+__pycache__/
+*.pyc
+
+# --- Carpetas de configuración del editor ---
+.vscode/
+.idea/
+
+# --- Archivos de sistema ---
+.DS_Store

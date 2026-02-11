@@ -1,0 +1,354 @@
+body {
+    background-color: #f8f9fa;
+    font-family: sans-serif;
+}
+
+main {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.resaltado {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+.btn-glow {
+ --glow-color: rgb(0, 195, 255);
+ --glow-spread-color: rgba(0, 195, 255, 0.781);
+ --enhanced-glow-color: rgb(184, 241, 255);
+ --btn-color: rgb(13, 110, 253);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: rgb(255, 255, 255);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+ cursor: pointer;
+ text-decoration: none;
+ display: inline-block;
+}
+
+.btn-glow::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.btn-glow:hover {
+ color: rgb(255, 255, 255);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.btn-glow:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+/* --- Menú de Navegación "Píldora" (Adaptado) --- */
+.nav-pill-container {
+  display: flex;
+  /* Color AZUL para combinar con tu web (en lugar del rosa original) */
+  background-color: rgb(13, 110, 253); 
+  width: fit-content; /* SE EXTIENDE AUTOMÁTICAMENTE según el contenido */
+  min-width: 200px;   /* Ancho mínimo para que no se vea ridículo */
+  height: 50px;       /* Un poco más alto para que respire */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;          /* Espacio entre iconos */
+  padding: 0 25px;    /* Relleno a los lados */
+  border-radius: 50px; /* Bordes totalmente redondos */
+  margin: 20px auto;   /* Centrado en la pantalla */
+  
+  /* Sombra azul brillante */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+              rgba(13, 110, 253, 0.5) 5px 10px 15px;
+  z-index: 1000;
+}
+
+.nav-pill-btn {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  text-decoration: none; /* Para quitar el subrayado de los links */
+}
+
+.nav-pill-btn:hover, .nav-pill-btn.active {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
+}
+
+.nav-pill-icon {
+  font-size: 20px;
+  width: 1.2em;
+  height: 1.2em;
+}
+/* --- CORRECCIÓN DE EMERGENCIA PARA ICONOS GIGANTES --- */
+
+/* Esto obliga a CUALQUIER icono dentro del menú a medir 24px */
+.nav-pill-container svg {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px;  /* Para que no se aplasten */
+    min-height: 24px;
+}
+
+/* Ajuste extra para asegurar que el botón contenedor no explote */
+.nav-pill-btn {
+    width: 45px;
+    height: 45px;
+    overflow: hidden; /* Si algo se sale, lo corta */
+}
+/* --- Botones Uiverse (Adaptados a Modo Claro y Barra Nav) --- */
+
+.btn-ui-container {
+  position: relative;
+  padding: 2px; /* Grosor del borde gradiente */
+  /* Gradiente Azul cian a Rosa (Mantenemos el toque original pero vibrante) */
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+}
+
+.btn-ui {
+  font-size: 0.85rem; /* AJUSTE CRÍTICO: Tamaño más pequeño para que quepa */
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border-radius: 0.7em; /* Un poco menos redondeado para encajar en el borde */
+  border: none;
+  
+  /* ADAPTACIÓN MODO CLARO: Fondo blanco, texto oscuro */
+  background-color: #ffffff; 
+  color: #333;
+  
+  cursor: pointer;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Importante para los links */
+  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+/* Efecto de brillo (Glow) al pasar el ratón */
+.btn-ui-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.btn-ui-container:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em); /* El brillo se expande */
+}
+
+.btn-ui-container:active::before {
+  filter: blur(0.2em);
+}
+
+/* Pequeño efecto hover en el botón interior */
+.btn-ui:hover {
+  background-color: #f8f9fa; /* Un blanco un pelín más gris */
+  color: #000;
+}
+body {
+    background-color: #f8f9fa;
+}
+
+/* --- CONTENEDOR PRINCIPAL AZUL --- */
+.nav-pill-container {
+    display: flex;
+    background-color: rgb(13, 110, 253); /* Fondo Azul */
+    width: fit-content;
+    min-height: 60px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre botones */
+    padding: 5px 15px;
+    border-radius: 50px;
+    margin: 0;
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* --- TIPO 1: Botones de Navegación (Inicio, Quiénes Somos) --- */
+.btn-nav-text {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem;
+    border: 1px solid transparent; /* Para que no salten al hacer hover */
+}
+
+/* Efecto al pasar el ratón o estar activo */
+.btn-nav-text:hover, .btn-nav-text.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+    color: #ffffff;
+}
+
+/* --- TIPO 2: Botones de Acción (Login, Registro) - Estilo Uiverse --- */
+.btn-ui-container {
+    position: relative;
+    padding: 2px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5); /* Borde Gradiente */
+    border-radius: 0.9em;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.btn-ui {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 0.7em;
+    border: none;
+    background-color: #ffffff; /* Fondo BLANCO */
+    color: #333; /* Letra Oscura */
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    display: block;
+}
+
+/* Efecto Glow */
+.btn-ui-container:hover {
+    box-shadow: 0 0 10px rgba(3, 169, 244, 0.5);
+    transform: scale(1.02); /* Pequeño zoom */
+}
+
+.btn-ui {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5em 1.2em;
+    border-radius: 0.7em;
+    border: none;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.btn-ui-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 0.9em;
+    z-index: -10;
+    filter: blur(0);
+    transition: filter 0.4s ease;
+}
+
+.btn-ui-container:hover::before {
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    filter: blur(1.2em);
+}
+
+.btn-ui-container:active::before {
+    filter: blur(0.2em);
+}
+
+.btn-ui:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+.btn-glow {
+    --glow-color: rgb(0, 195, 255);
+    --glow-spread-color: rgba(0, 195, 255, 0.781);
+    --enhanced-glow-color: rgb(184, 241, 255);
+    --btn-color: rgb(13, 110, 253);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 1em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+   }
+   
+   .btn-glow::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+   }
+   
+   .btn-glow:hover {
+    color: rgb(255, 255, 255);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+           0 0 4em 2em var(--glow-spread-color),
+           inset 0 0 .75em .25em var(--glow-color);
+   }
+   
+   .btn-glow:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+           0 0 2.5em 2em var(--glow-spread-color),
+           inset 0 0 .5em .25em var(--glow-color);
+   }

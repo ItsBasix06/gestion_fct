@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm mt-4">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-dark">Gestión de Prácticas FCT</h1>
+        <p class="col-md-8 fs-4 text-muted">
+            Bienvenido a tu cuaderno digital. Aquí podrás registrar tu actividad diaria, 
+            gestionar tus empresas y contactar con tu tutor.
+        </p>
+        <hr class="my-4">
+
+        <div class="mt-5">
+            {% if user.is_authenticated %}
+                <p class="fs-5">Hola, <strong>{{ user.username }}</strong>. Ya estás dentro.</p>
+                {% else %}
+                <a href="{% url 'login' %}" class="text-decoration-none">
+                    <button class="btn-glow">
+                        Comenzar
+                    </button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
