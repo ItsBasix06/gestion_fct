@@ -1,6 +1,6 @@
 body {
     background-color: #f8f9fa;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 main {
@@ -9,7 +9,7 @@ main {
 }
 
 .card {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: none;
 }
 
@@ -18,202 +18,140 @@ main {
     font-weight: bold;
 }
 
-footer {
-    background-color: #343a40;
+.btn-mini-contact {
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #eef2f7;
+    color: #5e72e4;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-mini-contact:hover {
+    background: #5e72e4;
     color: white;
-    padding: 20px 0;
-    margin-top: 50px;
-    text-align: center;
-}
-.btn-glow {
- --glow-color: rgb(0, 195, 255);
- --glow-spread-color: rgba(0, 195, 255, 0.781);
- --enhanced-glow-color: rgb(184, 241, 255);
- --btn-color: rgb(13, 110, 253);
- border: .25em solid var(--glow-color);
- padding: 1em 3em;
- color: rgb(255, 255, 255);
- font-size: 15px;
- font-weight: bold;
- background-color: var(--btn-color);
- border-radius: 1em;
- outline: none;
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 1em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
- position: relative;
- transition: all 0.3s;
- cursor: pointer;
- text-decoration: none;
- display: inline-block;
+    box-shadow: 0 3px 10px rgba(94, 114, 228, 0.3);
 }
 
-.btn-glow::after {
- pointer-events: none;
- content: "";
- position: absolute;
- top: 120%;
- left: 0;
- height: 100%;
- width: 100%;
- background-color: var(--glow-spread-color);
- filter: blur(2em);
- opacity: .7;
- transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+footer {
+    background-color: #ffffff;
+    margin-top: 40px;      /* Menos margen arriba */
+    padding: 40px 0 25px 0; /* Menos relleno interno */
+    border-radius: 30px 30px 0 0; /* Curvatura más discreta */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.02);
 }
 
-.btn-glow:hover {
- color: rgb(255, 255, 255);
- background-color: var(--glow-color);
- box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
-        inset 0 0 .75em .25em var(--glow-color);
+.footer-heading {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #95a5a6;
+    margin-bottom: 15px; /* Menos espacio debajo del título */
 }
 
-.btn-glow:active {
- box-shadow: 0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
+.footer-link {
+    display: block; /* Asegura que cada enlace ocupe su propia línea */
+    color: #6c757d;
+    text-decoration: none;
+    margin-bottom: 8px; /* Espacio reducido entre enlaces */
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
-/* --- Menú de Navegación "Píldora" (Adaptado) --- */
+
+.footer-help-box {
+    background-color: #f8f9fa;
+    padding: 20px; /* Caja más compacta */
+    border-radius: 20px;
+    border: 1px solid #f1f3f5;
+}
+
+.btn-mini-contact {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0d6efd;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-mini-contact {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-mini-contact:hover {
+    background-color: #0b5ed7;
+    color: white;
+    transform: scale(1.05);
+}
+
+.footer-brand span {
+    color: #0d6efd;
+    font-weight: 800;
+}
+
+.btn-mini-contact {
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #eef2f7;
+    color: #5e72e4;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-mini-contact:hover {
+    background: #5e72e4;
+    color: white;
+    box-shadow: 0 3px 10px rgba(94, 114, 228, 0.3);
+}
+
 .nav-pill-container {
-  display: flex;
-  /* Color AZUL para combinar con tu web (en lugar del rosa original) */
-  background-color: rgb(13, 110, 253); 
-  width: fit-content; /* SE EXTIENDE AUTOMÁTICAMENTE según el contenido */
-  min-width: 200px;   /* Ancho mínimo para que no se vea ridículo */
-  height: 50px;       /* Un poco más alto para que respire */
-  align-items: center;
-  justify-content: center;
-  gap: 15px;          /* Espacio entre iconos */
-  padding: 0 25px;    /* Relleno a los lados */
-  border-radius: 50px; /* Bordes totalmente redondos */
-  margin: 20px auto;   /* Centrado en la pantalla */
-  
-  /* Sombra azul brillante */
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
-              rgba(13, 110, 253, 0.5) 5px 10px 15px;
-  z-index: 1000;
+    display: flex;
+    background-color: rgb(13, 110, 253);
+    width: fit-content;
+    min-width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 25px;
+    border-radius: 50px;
+    margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+        rgba(13, 110, 253, 0.5) 5px 10px 15px;
+    z-index: 1000;
 }
 
-.nav-pill-btn {
-  outline: 0 !important;
-  border: 0 !important;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: all ease-in-out 0.3s;
-  cursor: pointer;
-  text-decoration: none; /* Para quitar el subrayado de los links */
-}
-
-.nav-pill-btn:hover, .nav-pill-btn.active {
-  transform: translateY(-3px);
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
-}
-
-.nav-pill-icon {
-  font-size: 20px;
-  width: 1.2em;
-  height: 1.2em;
-}
-/* --- CORRECCIÓN DE EMERGENCIA PARA ICONOS GIGANTES --- */
-
-/* Esto obliga a CUALQUIER icono dentro del menú a medir 24px */
 .nav-pill-container svg {
     width: 24px !important;
     height: 24px !important;
-    min-width: 24px;  /* Para que no se aplasten */
+    min-width: 24px;
     min-height: 24px;
 }
 
-/* Ajuste extra para asegurar que el botón contenedor no explote */
-.nav-pill-btn {
-    width: 45px;
-    height: 45px;
-    overflow: hidden; /* Si algo se sale, lo corta */
-}
-/* --- Botones Uiverse (Adaptados a Modo Claro y Barra Nav) --- */
-
-.btn-ui-container {
-  position: relative;
-  padding: 2px; /* Grosor del borde gradiente */
-  /* Gradiente Azul cian a Rosa (Mantenemos el toque original pero vibrante) */
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  border-radius: 0.9em;
-  transition: all 0.4s ease;
-  display: flex;
-  align-items: center;
-}
-
-.btn-ui {
-  font-size: 0.85rem; /* AJUSTE CRÍTICO: Tamaño más pequeño para que quepa */
-  font-weight: bold;
-  padding: 0.4em 1em;
-  border-radius: 0.7em; /* Un poco menos redondeado para encajar en el borde */
-  border: none;
-  
-  /* ADAPTACIÓN MODO CLARO: Fondo blanco, texto oscuro */
-  background-color: #ffffff; 
-  color: #333;
-  
-  cursor: pointer;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
-  text-decoration: none; /* Importante para los links */
-  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
-}
-
-/* Efecto de brillo (Glow) al pasar el ratón */
-.btn-ui-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 0.9em;
-  z-index: -10;
-  filter: blur(0);
-  transition: filter 0.4s ease;
-}
-
-.btn-ui-container:hover::before {
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  filter: blur(1.2em); /* El brillo se expande */
-}
-
-.btn-ui-container:active::before {
-  filter: blur(0.2em);
-}
-
-/* Pequeño efecto hover en el botón interior */
-.btn-ui:hover {
-  background-color: #f8f9fa; /* Un blanco un pelín más gris */
-  color: #000;
-}
-body {
-    background-color: #f8f9fa;
-}
-
-/* --- CONTENEDOR PRINCIPAL AZUL --- */
-.nav-pill-container {
-    display: flex;
-    background-color: rgb(13, 110, 253); /* Fondo Azul */
-    width: fit-content;
-    min-height: 60px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px; /* Espacio entre botones */
-    padding: 5px 15px;
-    border-radius: 50px;
-    margin: 0;
-    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
-}
-
-/* --- TIPO 1: Botones de Navegación (Inicio, Quiénes Somos) --- */
 .btn-nav-text {
     color: #ffffff;
     font-weight: 600;
@@ -222,50 +160,29 @@ body {
     border-radius: 20px;
     transition: background-color 0.3s ease;
     font-size: 0.95rem;
-    border: 1px solid transparent; /* Para que no salten al hacer hover */
+    border: 1px solid transparent;
 }
 
-/* Efecto al pasar el ratón o estar activo */
-.btn-nav-text:hover, .btn-nav-text.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+.btn-nav-text:hover,
+.btn-nav-text.active {
+    background-color: rgba(255, 255, 255, 0.2);
     color: #ffffff;
 }
 
-/* --- TIPO 2: Botones de Acción (Login, Registro) - Estilo Uiverse --- */
 .btn-ui-container {
     position: relative;
     padding: 2px;
-    background: linear-gradient(90deg, #03a9f4, #f441a5); /* Borde Gradiente */
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
     border-radius: 0.9em;
+    transition: all 0.4s ease;
     display: flex;
     align-items: center;
-    transition: all 0.4s ease;
 }
 
 .btn-ui {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: bold;
-    padding: 0.5em 1em;
-    border-radius: 0.7em;
-    border: none;
-    background-color: #ffffff; /* Fondo BLANCO */
-    color: #333; /* Letra Oscura */
-    text-decoration: none;
-    cursor: pointer;
-    white-space: nowrap;
-    display: block;
-}
-
-/* Efecto Glow */
-.btn-ui-container:hover {
-    box-shadow: 0 0 10px rgba(3, 169, 244, 0.5);
-    transform: scale(1.02); /* Pequeño zoom */
-}
-
-.btn-ui {
-    font-size: 0.9rem;
-    font-weight: bold;
-    padding: 0.5em 1.2em;
+    padding: 0.4em 1em;
     border-radius: 0.7em;
     border: none;
     background-color: #ffffff;
@@ -274,7 +191,6 @@ body {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     white-space: nowrap;
-    display: inline-block;
 }
 
 .btn-ui-container::before {
@@ -305,7 +221,6 @@ body {
 .btn-glow {
     --glow-color: rgb(0, 195, 255);
     --glow-spread-color: rgba(0, 195, 255, 0.781);
-    --enhanced-glow-color: rgb(184, 241, 255);
     --btn-color: rgb(13, 110, 253);
     border: .25em solid var(--glow-color);
     padding: 1em 3em;
@@ -316,39 +231,210 @@ body {
     border-radius: 1em;
     outline: none;
     box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 1em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
     position: relative;
     transition: all 0.3s;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
-   }
-   
-   .btn-glow::after {
-    pointer-events: none;
-    content: "";
-    position: absolute;
-    top: 120%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--glow-spread-color);
-    filter: blur(2em);
-    opacity: .7;
-    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
-   }
-   
-   .btn-glow:hover {
+}
+
+.btn-glow:hover {
     color: rgb(255, 255, 255);
     background-color: var(--glow-color);
     box-shadow: 0 0 1em .25em var(--glow-color),
-           0 0 4em 2em var(--glow-spread-color),
-           inset 0 0 .75em .25em var(--glow-color);
-   }
-   
-   .btn-glow:active {
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.btn-glow:active {
     box-shadow: 0 0 0.6em .25em var(--glow-color),
-           0 0 2.5em 2em var(--glow-spread-color),
-           inset 0 0 .5em .25em var(--glow-color);
-   }
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+.btn-registro-azul {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-registro-azul:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+.btn-clave {
+    background-color: #2d0e5f;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-clave:hover {
+    background-color: #421685;
+    transform: translateY(-2px);
+}
+
+.registration-form input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    transition: all .15s ease-in-out;
+}
+
+.registration-form input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* --- ANIMACIÓN DE ENTRADA (POCO A POCO) --- */
+@keyframes entradaSuave {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Esta clase hace que el elemento aparezca subiendo */
+.reveal {
+    opacity: 0;
+    /* Empieza invisible */
+    animation: entradaSuave 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Aquí creamos el efecto "poco a poco" (staggered) */
+.reveal-1 {
+    animation-delay: 0.1s;
+}
+
+.reveal-2 {
+    animation-delay: 0.2s;
+}
+
+.reveal-3 {
+    animation-delay: 0.3s;
+}
+
+.reveal-4 {
+    animation-delay: 0.4s;
+}
+
+.reveal-5 {
+    animation-delay: 0.5s;
+}
+.burger {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: 300ms;
+  border-radius: 10px;
+  position: relative;
+}
+
+.burger input[type="checkbox"] {
+  appearance: none;
+  transition: 300ms;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  transition: 300ms;
+  transform-origin: center center;
+}
+
+.burger::before {
+  transform: translateY(8px);
+}
+
+.burger::after {
+  transform: translateY(-8px);
+}
+
+.burger .line,
+.burger::before,
+.burger::after {
+  width: 20px;
+  height: 2.1px;
+  display: block;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.burger .line:checked {
+  width: 0;
+  transition-delay: 100ms;
+}
+
+.burger:has(.line:checked)::before {
+  animation: animation1 400ms ease-out 0s 1 both;
+}
+
+.burger:has(.line:checked)::after {
+  animation: animation2 400ms ease-out 0s 1 both;
+}
+
+.burger:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.burger:active {
+  scale: 0.95;
+}
+
+@keyframes animation1 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}

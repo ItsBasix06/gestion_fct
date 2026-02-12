@@ -1,27 +1,24 @@
-from django.shortcuts import render,redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from django.contrib import messages
+from .forms import RegistroForm
 
 def home(request):
-    return render(request,'core/home.html')
-def probar_base(request):
-    return render(request,'core/base.html')
+    return render(request, 'core/home.html')
 
 def registro(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegistroForm(request.POST)
         if form.is_valid():
-            usuario = form.save()
-            login(request, usuario)
-            messages.success(request, "¡Registro completado! Bienvenido.")
+            user = form.save()
+            login(request, user)
             return redirect('home')
-        else:
-            messages.error(request, "Error en el registro. Revisa los datos.")
     else:
-        form = UserCreationForm()
-        
+        form = RegistroForm()
+    
     return render(request, 'registration/signup.html', {'form': form})
 
-def registro(request):
-    return render(request, 'registration/signup.html', {'form': form})
+def about(request):
+    return render(request, 'core/about.html')
+
+def probar_base(request):
+    return render(request, 'core/base.html')

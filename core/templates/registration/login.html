@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-6 col-lg-5">
+        
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            
+            <div class="card-header text-center py-4" style="background: linear-gradient(90deg, #0d6efd, #0dcaf0);">
+                <h3 class="fw-bold text-white mb-0">Iniciar Sesión</h3>
+                <p class="text-white-50 mb-0 small">Accede a tu cuaderno digital</p>
+            </div>
+
+            <div class="card-body p-5 pt-4">
+                
+                <form method="post" class="registration-form">
+                    {% csrf_token %}
+                    
+                    {% if form.errors %}
+                        <div class="alert alert-danger small p-2 text-center mb-3">
+                            Usuario o contraseña incorrectos
+                        </div>
+                    {% endif %}
+
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-muted small">{{ field.label }}</label>
+                            {{ field }}
+                        </div>
+                    {% endfor %}
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn-registro-azul w-100">
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+
+                <div class="position-relative text-center my-4">
+                    <hr class="text-muted opacity-25">
+                    <span class="position-absolute top-50 start-50 translate-middle bg-white px-2 text-muted small">
+                        o en su lugar
+                    </span>
+                </div>
+
+                <div class="d-grid">
+                    <button class="btn-clave">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0" class="me-2">
+                            <circle cx="12" cy="12" r="10" fill="none" stroke="#ff8c00" stroke-width="2.5"/>
+                            <path d="M12 7v5l3 3" stroke="#ff8c00" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="4" fill="#ff8c00"/>
+                        </svg>
+                        Iniciar sesión con Cl@ve
+                    </button>
+                </div>
+
+            </div>
+            
+            <div class="card-footer text-center py-3 bg-light border-top-0">
+                <small class="text-muted">¿No tienes cuenta? <a href="{% url 'registro' %}" class="fw-bold text-primary text-decoration-none">Regístrate aquí</a></small>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
