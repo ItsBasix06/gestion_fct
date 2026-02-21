@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Modelo para las empresas colaboradoras
 class Empresa(models.Model):
+    """Guarda los datos de contacto de las empresas donde se hacen las FCT."""
     nombre = models.CharField(max_length=100)
     direccion = models.CharField(max_length=200)
     telefono = models.CharField(max_length=20)
@@ -15,8 +15,8 @@ class Empresa(models.Model):
     def __str__(self):
         return self.nombre
 
-# Modelo para los tutores de las empresas
 class Tutor(models.Model):
+    """Representa al responsable que supervisa al alumno dentro de la empresa."""
     nombre = models.CharField(max_length=100)
     email = models.EmailField()
     cargo = models.CharField(max_length=100)
@@ -29,8 +29,8 @@ class Tutor(models.Model):
     def __str__(self):
         return self.nombre
 
-# Modelo para el diario de prácticas del alumno
 class RegistroPractica(models.Model):
+    """Almacena la actividad diaria, las horas realizadas y el alumno que las hizo."""
     alumno = models.ForeignKey(User, on_delete=models.CASCADE)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
     fecha = models.DateField()
