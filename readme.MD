@@ -34,7 +34,7 @@ python manage.py migrate
 Arrancar el servidor:
 
 python manage.py runserver
-La web estará disponible en: http://127.0.0.1:8000/
+La web estará disponible en: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## 3. Usuarios de prueba
 Para que se puedan probar todas las funcionalidades y restricciones (como las vistas protegidas con login), hemos dejado preparados estos dos usuarios:
