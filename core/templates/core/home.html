@@ -1,29 +1,79 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-<div class="p-5 mb-4 bg-white rounded-3 shadow-sm mt-4 reveal reveal-1">
-    <div class="container-fluid py-5">
-        
-        <h1 class="display-5 fw-bold text-dark reveal reveal-2">Gestión de Prácticas FCT</h1>
-        
-        <p class="col-md-8 fs-4 text-muted reveal reveal-3">
-            Bienvenido a tu cuaderno digital. Aquí podrás registrar tu actividad diaria, 
-            gestionar tus empresas y contactar con tu tutor.
-        </p>
-        
-        <hr class="my-4 reveal reveal-4">
+<div class="container-fluid py-3 py-md-4 reveal reveal-1">
 
-        <div class="mt-5 reveal reveal-5">
-            {% if user.is_authenticated %}
-                <p class="fs-5">Hola, <strong>{{ user.username }}</strong>. Ya estás dentro.</p>
-            {% else %}
-                <a href="{% url 'registro' %}" class="text-decoration-none">
-                    <button class="btn-glow">
-                        Comenzar
-                    </button>
-                </a>
-            {% endif %}
+    {% if user.is_authenticated %}
+    <div class="row mb-3 mb-md-4 align-items-center">
+        <div class="col-12">
+            <h2 class="fw-bold text-dark mb-1">Hola, <span class="text-primary">{{ user.username }}</span> 👋</h2>
+            <p class="text-muted mb-0">Este es tu panel de control de las FCT.</p>
         </div>
     </div>
+
+    <div class="row g-3 g-md-4 reveal reveal-2">
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+                <div class="card-body p-3 p-md-4 text-center">
+                    <div class="bg-primary bg-opacity-10 d-inline-flex p-3 rounded-circle mb-3">
+                        <i class="bi bi-journal-text text-primary fs-1"></i>
+                    </div>
+                    <h4 class="fw-bold fs-5">Mi Diario</h4>
+                    <p class="text-muted small">Registra las actividades y horas que realizas cada día en la empresa.</p>
+                    <a href="{% url 'diario_list' %}" class="btn btn-outline-primary rounded-pill w-100 mt-2 fw-semibold">Ir al Diario</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+                <div class="card-body p-3 p-md-4 text-center">
+                    <div class="bg-success bg-opacity-10 d-inline-flex p-3 rounded-circle mb-3">
+                        <i class="bi bi-building text-success fs-1"></i>
+                    </div>
+                    <h4 class="fw-bold fs-5">Empresas</h4>
+                    <p class="text-muted small">Añade o consulta los datos del centro de trabajo donde haces las prácticas.</p>
+                    <a href="{% url 'empresa_list' %}" class="btn btn-outline-success rounded-pill w-100 mt-2 fw-semibold">Ver Empresas</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 hover-lift">
+                <div class="card-body p-3 p-md-4 text-center">
+                    <div class="bg-warning bg-opacity-10 d-inline-flex p-3 rounded-circle mb-3">
+                        <i class="bi bi-person-badge text-warning fs-1"></i>
+                    </div>
+                    {% if mi_tutor %}
+                    <h4 class="fw-bold mb-1 text-dark fs-5">{{ mi_tutor.nombre }}</h4>
+                    <p class="text-muted small mb-3">{{ mi_tutor.cargo }} en <strong class="text-primary">{{ mi_tutor.empresa.nombre }}</strong></p>
+                    <a href="{% url 'tutor_list' %}" class="btn btn-outline-warning rounded-pill w-100 mt-2 fw-semibold">Ver Tutores</a>
+                    {% else %}
+                    <h4 class="fw-bold fs-5">Tutor de Empresa</h4>
+                    <p class="text-muted small">Gestiona el contacto de la persona que te supervisa laboralmente.</p>
+                    <a href="{% url 'tutor_list' %}" class="btn btn-outline-warning rounded-pill w-100 mt-2 fw-semibold">Asignar Tutor</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="p-4 p-sm-5 mb-4 bg-white rounded-4 shadow-sm mt-2 text-center">
+        <h1 class="fw-bold text-dark mb-3" style="font-size:clamp(1.5rem,5vw,3rem);">Gestión Digital de Prácticas FCT</h1>
+        <p class="text-muted mx-auto mb-4 mb-md-5" style="max-width:700px; font-size:clamp(0.95rem,2.5vw,1.2rem);">
+            Bienvenido a tu cuaderno digital. Aquí podrás registrar tu actividad diaria, gestionar tus empresas y llevar un control total de tus horas.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center align-items-stretch align-items-sm-center gap-3">
+            <a href="{% url 'registro' %}" class="text-decoration-none">
+                <button class="btn-glow w-100">Comenzar Ahora</button>
+            </a>
+            <a href="{% url 'login' %}" class="btn btn-light btn-lg rounded-4 px-4 fw-bold border">
+                Ya tengo cuenta
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
 </div>
 {% endblock %}

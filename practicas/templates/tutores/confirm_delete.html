@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 reveal reveal-1">
+    <div class="col-md-6 text-center">
+        <div class="card p-5 shadow-sm rounded-4 border-0">
+            <div class="bg-danger bg-opacity-10 d-inline-flex p-3 rounded-circle mb-4 mx-auto">
+                <i class="bi bi-exclamation-triangle text-danger display-4"></i>
+            </div>
+            
+            <h2 class="fw-bold text-dark">¿Eliminar Tutor?</h2>
+            <p class="text-muted">Estás a punto de borrar a <strong>{{ objeto.nombre }}</strong>.<br>Esta acción no se puede deshacer.</p>
+            
+            <form method="post" class="mt-4 d-flex justify-content-center gap-3">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger px-4 rounded-pill fw-bold">
+                    <i class="bi bi-trash3-fill me-2"></i>Sí, eliminar
+                </button>
+                <a href="{% url 'tutor_list' %}" class="btn btn-light px-4 rounded-pill fw-bold border text-decoration-none">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

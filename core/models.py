@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class MensajeContacto(models.Model):
+    id = models.BigAutoField(primary_key= True)
     nombre = models.CharField(max_length=100, verbose_name="Nombre del remitente")
     email = models.EmailField(verbose_name="Correo de contacto")
     asunto = models.CharField(max_length=200)
